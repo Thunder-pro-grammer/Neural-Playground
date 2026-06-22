@@ -1,0 +1,9 @@
+[project]
+name = "neural-playground"
+version = "0.1.0"
+requires-python = ">=3.14"
+dependencies = [
+    "customtkinter>=5.2.2",
+    "matplotlib>=3.10.9",
+    "numpy>=2.4.6",
+]
