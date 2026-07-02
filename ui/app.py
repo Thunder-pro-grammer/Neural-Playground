@@ -1,4 +1,6 @@
 import customtkinter as ctk
+from network import NeuralNetwork
+from customtkinter.windows.widgets import font
 
 ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("blue")
@@ -19,6 +21,12 @@ class App(ctk.CTk):
         self.right = ctk.CTkFrame(self, width = 280, corner_radius = 0)
         self.right.pack(side = "right", fill = "y")
         self.right.pack_propagate(False)
+
+        ctk.CTkLabel(self.left, text="Neural Playground", font=("Arial", 16, "bold")).pack(pady=(20, 10))
+        self.train_btn = ctk.CTkButton(self.left, text = "Train", fg_color= "#2ecc71", hover_color = "#27ae60")
+        self.train_btn.pack(pady = 20, padx = 12, fill = "x")
+
+
 
 if __name__ == "__main__":
     app = App()
