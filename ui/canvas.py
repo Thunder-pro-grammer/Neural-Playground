@@ -35,8 +35,20 @@ class NetworkCanvas(ctk.CTkCanvas):
             for i, (x1, y1) in enumerate(positions[layer_idx]):
                 for j, (x2, y2) in enumerate(positions[layer_idx+1]):
                     val = weight_matrix[i][j]
-                    thickness = max(1, int(abs(val/max_w) * 4))
-                    color = "#e74c3c" if val > 0 else "#3298db"
+                    strength = min(1.0, abs(val)/max_w) ** 0.5
+                    thickness = max(1, int(strength*5))
+
+                    if val > 0:
+                        r, g, b = 231, 76, 60
+                    else:
+                        r, g, b = 52, 152, 219
+
+                    grey = 30
+                    r = int(grey + (r - grey) * strength)
+                    g = int(grey + (g - grey) * strength)
+                    b = int(grey + (b - grey) * strength)
+                    color = f"#{r:02x}{g:02x}{b:02x}"
+
                     self.create_line(x1, y1, x2, y2, fill=color, width=thickness)
 
         for col in positions:

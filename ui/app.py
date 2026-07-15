@@ -1,7 +1,9 @@
 import customtkinter as ctk
+import numpy as np
 from network import NeuralNetwork
 from ui.canvas import NetworkCanvas
-from customtkinter.windows.widgets import font
+
+
 
 ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("blue")
@@ -29,12 +31,25 @@ class App(ctk.CTk):
         self.right.pack(side = "right", fill = "y")
         self.right.pack_propagate(False)
 
+        self.loss_label = ctk.CTkLabel(self.right, text = "Loss: -", font=("Arial", 14))
+        self.loss_label.pack(pady = 20)
+
         ctk.CTkLabel(self.left, text="Neural Playground", font=("Arial", 16, "bold")).pack(pady=(20, 10))
         self.train_btn = ctk.CTkButton(self.left, text = "Train", fg_color= "#2ecc71", hover_color = "#27ae60", command=self._on_train_click)
         self.train_btn.pack(pady = 20, padx = 12, fill = "x")
 
     def _on_train_click(self):
-        print("Train button clicked")
+        X = np.array([[0, 0], [0, 1], [1, 0],[1, 1]], dtype=float)
+        y = np.array([[0], [1], [1], [0]], dtype=float)
+
+        loss = 0
+        for epoch in range(3000):
+            loss = self.network.train_step(X, y, learning_rate = 0.1)
+
+        self.loss_label.configure(text = f"Final loss: {loss:.4f}")
+        self.network_canvas.draw()
+
+
 
 
 
