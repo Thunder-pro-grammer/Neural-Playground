@@ -11,7 +11,7 @@ How I built it
 - `ui/app.py` builds the desktop interface using CustomTkinter
 
 How to run it
-Option 1 - Download the exe: Download the “main.exe” from the Releases page
+Option 1 - Download the exe: Download the “main.exe” from the Releases page: https://github.com/Thunder-pro-grammer/neural-playground/releases/tag/v1.0
 
 Option 2 -
 1. Clone the repo
