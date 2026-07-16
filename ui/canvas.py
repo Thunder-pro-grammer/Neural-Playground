@@ -7,6 +7,10 @@ class NetworkCanvas(ctk.CTkCanvas):
         self.network = network
         self.bind("<Configure>", self._on_resise)
 
+    def set_network(self, network):
+        self.network = network
+        self.draw()
+
     def _on_resise(self, event):
         self.draw()
 

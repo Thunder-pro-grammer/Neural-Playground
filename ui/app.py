@@ -38,6 +38,9 @@ class App(ctk.CTk):
         self.train_btn = ctk.CTkButton(self.left, text = "Train", fg_color= "#2ecc71", hover_color = "#27ae60", command=self._on_train_click)
         self.train_btn.pack(pady = 20, padx = 12, fill = "x")
 
+        self.reset_btn = ctk.CTkButton(self.left, text = "Reset", fg_color = "#e74c3c", hover_color= "#c0392b", command=self._on_reset_click)
+        self.reset_btn.pack(pady = (0, 20), padx = 12, fill = "x")
+
     def _on_train_click(self):
         X = np.array([[0, 0], [0, 1], [1, 0],[1, 1]], dtype=float)
         y = np.array([[0], [1], [1], [0]], dtype=float)
@@ -49,7 +52,10 @@ class App(ctk.CTk):
         self.loss_label.configure(text = f"Final loss: {loss:.4f}")
         self.network_canvas.draw()
 
-
+    def _on_reset_click(self):
+        self.network = NeuralNetwork([2, 4, 1])
+        self.network_canvas.set_network(self.network)
+        self.loss_label.configure(text = "Loss: -")
 
 
 
