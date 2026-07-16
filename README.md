@@ -26,6 +26,5 @@ Option 2 -
 2. Install dependencies: `pip install numpy customtkinter matplotlib`
 3. Run `main.py`
 
-What's next
-- Live animation during training, instead of only seeing the result after it finishes
-- Support for more datasets beyond XOR
+Why I built it:
+I built this project because I wanted to understand how neural networks learn. I’ve watched some AI tools perform amazing tasks and become curious about the details of what’s happening within the networks. I also made this project with the intention of practicing my python. I chose to make this a visualizer to help people better understand the changes to the weights within the network.
