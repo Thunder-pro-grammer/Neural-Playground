@@ -12,6 +12,9 @@ How I built it
 
 How to run it
 Option 1 - Download the exe: Download the “main.exe” from the Releases page: https://github.com/Thunder-pro-grammer/neural-playground/releases/tag/v1.0
+          Windows users you may encounter a screen after downloading that says windows protected your PC. To by pass this click more info on the screen then click run anyway.
+          For mac users you will need to downlaod the source code zip file on the release pages then open in an IDE and in the IDE terminal you will need to run this command: 
+          pip install numpy customtkinter matplotlib, then run the project.
 
 Option 2 -
 1. Clone the repo
