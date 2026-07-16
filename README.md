@@ -5,6 +5,11 @@ This is a desktop app that lets you watch a neural network learn in real time. A
 What it does
 Open the app and you'll see a neural network rendered as connected circles and lines. Click Train and the network learns to solve XOR (a classic logic problem) over 3000 epochs(1 epoch is 1 run through the data). You can watch the weights change color and thickness as the network learns, and see the loss number drop as it gets more accurate. Click Reset to randomize the weights and start over.
 
+Features:
+- The Train button runs training and redraws the network, showing updated weights as colored, differently-thick lines, along with the current loss."
+- The reset button resets the network so that you can train the data again, and it resets loss to a "-" and changes to a number when you click train.
+
+
 How I built it
 - `network.py` contains the neural network itself and all the math for it: forward pass, backpropagation, and gradient descent
 - `ui/canvas.py` renders the network visually, coloring each connection based on whether its weight is positive or negative, and scaling thickness based on how strong that weight is
